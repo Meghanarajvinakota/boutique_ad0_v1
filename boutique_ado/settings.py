@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+if os.path.exists("env.py"):
+    import env
+
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['boutique-ado-meghana-7e79711cc1bf.herokuapp.com', 'boutique-ado-meghana.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['boutique-ado-meghana-7e79711cc1bf.herokuapp.com','8000-meghanarajv-boutiquead0-7e0jx3idmci.ws.codeinstitute-ide.net', 'boutique-ado-meghana.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -180,6 +183,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
+     # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
      # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'boutique-ado-meghana'
     AWS_S3_REGION_NAME = 'eu-north-1'
