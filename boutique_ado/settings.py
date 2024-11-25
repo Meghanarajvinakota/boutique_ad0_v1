@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['boutique-ado-meghana-7e79711cc1bf.herokuapp.com','8000-meghanarajv-boutiquead0-7e0jx3idmci.ws.codeinstitute-ide.net', 'boutique-ado-meghana.herokuapp.com', 'localhost']
 
