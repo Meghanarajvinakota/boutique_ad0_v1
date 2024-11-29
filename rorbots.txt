@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://boutique-ado-meghana-7e79711cc1bf.herokuapp.com/sitemap.xml
